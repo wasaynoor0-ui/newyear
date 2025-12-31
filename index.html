@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Year Surprise ❤️</title>
+<meta charset="UTF-8">
+<style>
+body{
+background:linear-gradient(135deg,#ff5fa2,#ffc3a0);
+font-family: 'Segoe UI',sans-serif;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+text-align:center;
+}
+.box{
+background:rgba(0,0,0,0.35);
+padding:30px;
+border-radius:20px;
+max-width:700px;
+box-shadow:0 0 40px rgba(0,0,0,0.4);
+}
+#message{display:none;font-size:20px;line-height:1.6;}
+#countdown{font-size:34px;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<div class="box">
+<div id="countdown">Loading...</div>
+<div id="message">
+My love, this little page holds my whole heart for you.
+
+It’s been only three months, but somehow it feels like I’ve known you forever. In such a short time, you’ve become my comfort, my safe place, and my happiest thought. From our first kiss on your bed, to the scar I gave you that now feels like a tiny piece of me living on you, from the tight hugs where the world disappeared, to the kisses we shared in the car when even silence felt romantic, every memory is carved deep inside my soul.
+
+You don’t even realize how naturally you changed me. You made me softer, calmer, more hopeful. You made me believe in forever, not as a word but as a feeling I get whenever I look at you.
+
+As this new year begins, I don’t want wishes, I don’t want promises, I only want you. Your laugh, your warmth, your hand in mine through every high and every storm.
+
+This is just the beginning of our story, and I already know I want to write every chapter with you. Happy New Year, my heart ❤️
+</div>
+</div>
+
+<script>
+var target = new Date(new Date().getFullYear()+1,0,1,0,0,0);
+
+function update(){
+var now = new Date();
+var diff = target - now;
+
+if(diff<=0){
+document.getElementById("countdown").style.display="none";
+document.getElementById("message").style.display="block";
+return;
+}
+
+var h = Math.floor(diff/1000/60/60);
+var m = Math.floor(diff/1000/60)%60;
+var s = Math.floor(diff/1000)%60;
+
+document.getElementById("countdown").innerHTML = 
+"Message unlocks in<br>" + h + "h " + m + "m " + s + "s";
+}
+setInterval(update,1000);
+update();
+</script>
+
+</body>
+</html>
